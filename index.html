@@ -3,40 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snap Photography</title>
+    <title>Patrik Früštök</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
-            <div class="logo">SNAP</div>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Photos</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Testimonial</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home" class="active">Domov</a></li>
+                    <li><a href="#photos">Fotografie</a></li>
+                    <li><a href="#aboutme">O mne</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="indexen.html">English</a></li>
                 </ul>
             </nav>
             <div class="social-media">
-                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/patrik.frustok/"><img src="instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/patrik.fufo"><img src="facebook.png" alt="Facebook"></a>
             </div>
         </aside>
 
         <main class="content">
-            <section class="banner">
-                <h1>SNAP</h1>
-                <p>A Free Onepage Bootstrap Template by Untree.co. Under licensed Creative Common Attribution 3.0</p>
-                <a href="#" class="cta-button">Available for Hire</a>
+            <section class="banner" id="home">
+                <h1>Patrik Früštök</h1>
             </section>
 
-            <section class="photos">
-                <h2>Photos</h2>
+            <section class="photos" id="photos">
+                <h2>Fotografie</h2>
                 <div class="photo-grid">
                     <div class="photo-item"><img src="photo1.jpg" alt="Photo 1"></div>
                     <div class="photo-item"><img src="photo2.jpg" alt="Photo 2"></div>
@@ -50,24 +47,64 @@
                 </div>
             </section>
 
-            <section class="about-me">
+            <section class="about-me" id="aboutme">
                 <div class="profile">
-                    <img src="profile.jpg" alt="Your Profile Picture" class="profile-pic">
+                    <img src="profilepic.jpg" alt="Your Profile Picture" class="profile-pic">
                 </div>
                 <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hi! I'm [Your Name], a passionate photographer with a love for capturing the world through my lens. Whether it's stunning landscapes, candid portraits, or dynamic events, I strive to create images that tell a story and evoke emotions.</p>
-                    <h3>My Services</h3>
-                    <ul>
-                        <li>Portrait Photography</li>
-                        <li>Event Photography</li>
-                        <li>Landscape Photography</li>
-                        <li>Commercial Photography</li>
-                    </ul>
+                    <h2>O mne</h2>
+                    <p>Volám sa Patrik, mám 22 rokov a študujem v Brne. S fotením som začal už ako malý a stále si budujem toto portfólio. Pre akúkoľvek spoluprácu ma neváhajte kontaktovať!</p>
+                    <h3>Moje Služby</h3>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <span class="service-icon">&#10003;</span> 
+                            <span class="service-text">Event Photo</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-icon">&#10003;</span>
+                            <span class="service-text">Promo Photo</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-icon">&#10003;</span>
+                            <span class="service-text">Portréty</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-icon">&#10003;</span>
+                            <span class="service-text">Šport</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-icon">&#10003;</span>
+                            <span class="service-text">Rodinné stretnutia a oslavy</span>
+                        </div>
+                    </div>
                 </div>
             </section>
+            
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.querySelector('.banner');
+            const initialHeight = 100; // Initial height in vh
+    
+            function adjustBannerHeight() {
+                const scrollPosition = window.scrollY;
+                const viewportHeight = window.innerHeight;
+    
+                // Calculate new height as a percentage of viewport height
+                let newHeight = initialHeight - (scrollPosition / viewportHeight) * (initialHeight - 50); 
+                if (newHeight < 50) newHeight = 50;
+    
+                // Apply the new height to the banner
+                banner.style.height = `${newHeight}vh`;
+            }
+    
+            // Adjust height on page load and scroll
+            adjustBannerHeight();
+            window.addEventListener('scroll', adjustBannerHeight);
+        });
+    </script>
+    
 </body>
 </html>
-stryles
